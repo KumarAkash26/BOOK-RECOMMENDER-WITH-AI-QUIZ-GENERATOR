@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EchoVerse</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<style>
+    body { font-family: Times New Roman, sans-serif; margin: 0; font-size: 18px ; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;} .navbar { display: flex; justify-content: space-between; align-items: center; background-color:rgb(12, 13, 13); padding: 10px; } .navbar a { color: white; text-decoration: none; padding: 15px; } .navbar .search-box { display: flex; align-items: center; } .navbar input[type="text"] { padding: 8px; border: none; border-radius: 3px;}
+    .navbar-brand { margin-left: -195px;}
+
+</style>
+<body style="background-color:#D2D2D2">
+
+    <nav class="navbar" style="background-color:#00bfff">
+        <a class="navbar-brand" style="font-size:50px">EchoVerse</a>
+        <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/recommend">Recommend</a></li>
+            <li><a href="/generate_mcq">Ai Quiz Questions</a></li>
+            <li><a>Contact</a></li>
+        </ul>
+    </nav>
+
+    
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #D2D2D2;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 50px;
+        }
+        form {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.89);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: rgb(114, 133, 154);
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .navbar {
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+        }
+        .navbar ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+        .navbar li {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+   
+    
+    <h1>Generate Multiple-Choice Questions</h1>
+    <form method="post" action="{{ url_for('generate_mcq') }}">
+        <label for="topic">Topic:</label>
+        <input type="text" id="topic" name="topic" required><br><br>
+        <label for="num_questions">Number of Questions:</label>
+        <input type="number" id="num_questions" name="num_questions" required><br><br>
+        <input type="submit" value="Generate MCQs">
+    </form>
+</body>
+</html>
